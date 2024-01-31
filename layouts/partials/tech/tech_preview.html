@@ -2,7 +2,7 @@
   <a href="{{ .Permalink }}">
     <h2 class="post-title">{{ .Title }} -tp</h2>
     {{ if .Params.subtitle }}
-    <h5 class="post-subtitle">{{ .Params.subtitle }}</h5>
+    <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
     {{ end }} {{ if .Params.image }}
     <img
       src="{{ .Params.image }}"
@@ -24,7 +24,7 @@
 
   {{/*
   <p class="post-meta">{{ partial "post_meta.html" . }}</p>
-  */}}
+  */}} {{/*
   <div class="post-entry">
     {{ if .Truncated }} {{ .Summary }}
     <a
@@ -34,8 +34,7 @@
     >
     {{ else }} {{ .Content }} {{ end }}
   </div>
-
-  {{ if .Params.tags }}
+  */}} {{ if .Params.tags }}
   <div class="blog-tags">
     {{ range .Params.tags }}
     <a href="{{ $.Site.LanguagePrefix | absURL }}/tags/{{ . | urlize }}/"
