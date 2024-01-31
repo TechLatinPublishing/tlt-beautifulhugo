@@ -41,10 +41,21 @@
                   {{/* <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a> */}}
                   {{/* <p>xxx {{.Summary}}</p> */}}
                   {{/* {{ partial "chal_preview.html" .}}  */}}
-
+{{/* 
                   <div>
                   {{ partial "tech/tech_preview.html" . }} 
-                  </div>
+                  </div> */}}
+
+
+<div style="display: flex;">
+    <div style="width: 90%;">
+        {{ partial "tech/tech_preview.html" . }}
+    </div>
+    <div style="width: 10%;">
+        <!-- Your image goes here -->
+        <img src="your-image-source.jpg" alt="Image">
+    </div>
+</div>
 
 
               {{/* </li> */}}
