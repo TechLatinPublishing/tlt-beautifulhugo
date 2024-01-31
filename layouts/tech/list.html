@@ -41,7 +41,7 @@
                   {{/* <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a> */}}
                   {{/* <p>xxx {{.Summary}}</p> */}}
                   {{/* {{ partial "chal_preview.html" .}}  */}}
-                  {{ partial "tech/tech_preview.html" }} 
+                  {{ partial "tech/tech_preview.html" . }} 
               </li>
             {{ end }}
           </ul>
