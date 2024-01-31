@@ -1,21 +1,9 @@
 {{ define "main" }}
 <div class="container" role="main">
-
   <div class="row">
-
-
-      <div class="col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0">
-        <h1>Side columns</h1>
-      </div>
-
-
-
-    <div class="col-lg-8 col-lg-offset-0 col-md-8 col-md-offset-0">
+    <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
       <article role="main" class="blog-post">
-      {{/* <div> <h1>single Challenge type --1</h1> <div> */}}
         {{ .Content }}
-
-      {{/* <div> <h1>single Challenge type --1</h1> <div> */}}
 
         {{ if .Params.tags }}
           <div class="blog-tags">
@@ -51,10 +39,6 @@
           {{ end }}
         {{ end }}
       </article>
-
-
-{{/* Doing Pagers */}}
-
 
       {{ if ne .Type "page" }}
         <ul class="pager blog-pager">
@@ -100,10 +84,6 @@
       {{ end }}
 
     </div>
-
-
   </div>
-
-  
 </div>
 {{ end }}
