@@ -1,8 +1,8 @@
 <article class="post-preview">
   <a href="{{ .Permalink }}">
-    <h2 class="post-title">. - tech-preview{{ .Title }}</h2>
+    <h2 class="post-title">{{ .Title }} -tp</h2>
     {{ if .Params.subtitle }}
-    <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
+    <h5 class="post-subtitle">{{ .Params.subtitle }}</h5>
     {{ end }} {{ if .Params.image }}
     <img
       src="{{ .Params.image }}"
