@@ -58,6 +58,22 @@
 </div>
 
 
+<div style="display: flex;">
+    <div style="width: 10%; background-color: red; display: flex; justify-content: center; align-items: center;">
+        <!-- Your image goes here -->
+        <img src="your-image-source.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
+    </div>
+    <div style="width: 90%;">
+        {{ partial "tech/tech_preview.html" . }}
+    </div>
+</div>
+
+
+<p>1 - {{ .Params.vyBKColor }}</p>
+<p>2 - {{ .Site.Params.vyBKColor }}</p>
+<p>3 - {{ .Params.vyBKColor }}</p>
+<p>4 - {{ .Params.vyBKColor }}</p>
+
 
               {{/* </li> */}}
             {{ end }}
