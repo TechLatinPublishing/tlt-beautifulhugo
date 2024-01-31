@@ -33,17 +33,17 @@
               {{ end }}
 
 
-          {{/* <ul>
+          <ul>
             <!-- Ranges through content/tech/*.md -->
             <div class="posts-list">
             {{ range .Pages }}
                 <li>
-                  <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+                  {{/* <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a> */}}
                   <p>{{.Summary}}</p>
                   {{ partial "chal_preview.html" .}} 
               </li>
             {{ end }}
-          </ul> */}}
+          </ul>
     
     
     
