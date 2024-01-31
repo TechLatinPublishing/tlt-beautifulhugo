@@ -37,12 +37,17 @@
             <!-- Ranges through content/tech/*.md -->
             <div class="posts-list">
             {{ range .Pages }}
-                <li>
+                {{/* <li> */}}
                   {{/* <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a> */}}
                   {{/* <p>xxx {{.Summary}}</p> */}}
                   {{/* {{ partial "chal_preview.html" .}}  */}}
+
+                  <div>
                   {{ partial "tech/tech_preview.html" . }} 
-              </li>
+                  </div>
+
+
+              {{/* </li> */}}
             {{ end }}
           </ul>
     
