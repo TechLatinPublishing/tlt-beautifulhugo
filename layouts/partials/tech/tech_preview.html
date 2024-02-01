@@ -3,13 +3,13 @@
     <h2 class="post-title">{{ .Title }}</h2>
     {{ if .Params.subtitle }}
     <h3 class="post-subtitle">{{ .Params.subtitle }}</h3>
-    {{ end }} {{ if .Params.image }}
+    {{ end }} {{ if .Params.image }} {{/*
     <img
       src="{{ .Params.image }}"
       alt="{{ .Title }}"
       class="img-title"
     />
-    {{ end }} {{ if .Params.video }}
+    */}} {{ end }} {{ if .Params.video }}
     <video
       loop
       autoplay
