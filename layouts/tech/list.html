@@ -1,135 +1,83 @@
 {{ define "main" }}
-<div class="container" role="main">
+<div
+  class="container"
+  role="main"
+>
+  <h4 class="vysummary">summary: {{.Summary}}</h4>
+  {{/*
+  <h5>{{.Summary02}}</h5>
+  */}} {{/*
+  <h4>Language {{.Site.Language.LanguageName}}</h4>
+  */}}
+  <div class="row">
+    <div class="outer. col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0">
+      <div class="inner">
+        <h4>tech side bar</h4>
+      </div>
 
-       <h4 class="vysummary">summary: {{.Summary}}</h4>
-       {{/* <h5> {{.Summary02}}</h5> */}}
-
-       {{/* <h4>Language {{.Site.Language.LanguageName}}</h4> */}}
-    <div class="row">
-            <div class="outer. col-lg-3 col-lg-offset-0 col-md-3 col-md-offset-0">
-              <div class="inner">
-                <h4>tech side bar</h4>
-              </div>
-
-
-              <div class="inner">
-                <h6>ad here</h6>
-              </div>
-              <div class="inner">
-                <h6>ad here</h6>
-              </div>
-
-
-            </div>
-
-    
-    
-            <div class="col-lg-9 col-lg-offset-0 col-md-9 col-md-offset-0">
-
-              {{ with .Content }}
-                <div class="well">
-                      <h6>put horz add here</h6> 
-                </div>  
-              {{ end }}
-
-
-          <ul>
-            <!-- Ranges through content/tech/*.md -->
-            <div class="posts-list">
-            {{ range .Pages }}
-                {{/* <li> */}}
-                  {{/* <a href="{{.Permalink}}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a> */}}
-                  {{/* <p>xxx {{.Summary}}</p> */}}
-                  {{/* {{ partial "chal_preview.html" .}}  */}}
-{{/* 
-                  <div>
-                  {{ partial "tech/tech_preview.html" . }} 
-                  </div> */}}
-
-
-<div style="display: flex;">
-    <div style="width: 10%; background-color: {{ .Params.vyBKColor }};">
-        <!-- Your image goes here -->
-        <img src="your-image-source.jpg" alt="Image">
+      <div class="inner">
+        <h6>ad here</h6>
+      </div>
+      <div class="inner">
+        <h6>ad here</h6>
+      </div>
     </div>
-    <div style="width: 90%;">
-        {{ partial "tech/tech_preview.html" . }}
-    </div>
-</div>
 
-
-<div style="display: flex;">
-    <div style="width: 10%; background-color: red; display: flex; justify-content: center; align-items: center;">
-        <!-- Your image goes here -->
-        <img src="your-image-source.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
-    </div>
-    <div style="width: 90%;">
-        {{ partial "tech/tech_preview.html" . }}
-    </div>
-</div>
-
-
-<div style="display: flex;">
-    <div style="width: 10%; background-color: {{ .Site.Params.vyBKColor }}; display: flex; justify-content: center; align-items: center;">
-        <!-- Your image goes here -->
-        <img src="your-image-source.jpg" alt="Image" style="max-width: 100%; max-height: 100%;">
-    </div>
-    <div style="width: 90%;">
-        {{ partial "tech/tech_preview.html" . }}
-    </div>
-</div>
-
-
-
-<p>1 - {{ .Params.vyBKColor }}</p>
-<p>2 - {{ .Site.Params.vyBKColor }}</p>
-<p>3 - {{ .Params.vyBKColor }}</p>
-<p>4 - {{ .Params.vyBKColor }}</p>
-
-
-              {{/* </li> */}}
-            {{ end }}
-          </ul>
-    
-    
-    
-           {{/* </div> */}}
-
-
-
-
-          <div class="posts-list"> 
-            <h1>AAA put something here</h1>
-            {{ range .Paginator.Pages }} {{ partial "post_preview.html" .}} {{ end }}
-            <h1>BBB put something here</h1>
-          </div>
-
-
-
-        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
-             <ul class="pager main-pager">
-                {{ if .Paginator.HasPrev }}
-                  <li class="previous">
-                  <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/"> &larr; {{ i18n "newerPosts" }}</a>
-              </li>
-        {{ end }} 
-        
-        {{ if .Paginator.HasNext }}
-            <li class="next">
-              <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/"> {{ i18n "olderPosts" }} &rarr;</a>
-            </li>
-        {{ end }}
-        </ul>
+    <div class="col-lg-9 col-lg-offset-0 col-md-9 col-md-offset-0">
+      {{ with .Content }}
+      <div class="well">
+        <h6>put horz add here</h6>
+      </div>
       {{ end }}
 
+      <!-- Ranges through content/tech/*.md -->
+      <div class="posts-list">
+        {{ range .Pages }}
 
+        <div style="display: flex">
+          <div
+            style="width: 10%; background-color: {{ .Site.Params.vyBKColor }}; display: flex; justify-content: center; align-items: center;"
+          >
+            <!-- Your image goes here -->
+            <img
+              src="your-image-source.jpg"
+              alt="Image"
+              style="max-width: 100%; max-height: 100%"
+            />
+          </div>
+          <div style="width: 90%">{{ partial "tech/tech_preview.html" . }}</div>
+        </div>
 
+        {{ end }}
+
+        <div class="posts-list">
+          <h1>AAA put something here</h1>
+          {{ range .Paginator.Pages }} {{ partial "post_preview.html" .}} {{ end
+          }}
+          <h1>BBB put something here</h1>
+        </div>
+
+        {{ if or (.Paginator.HasPrev) (.Paginator.HasNext) }}
+        <ul class="pager main-pager">
+          {{ if .Paginator.HasPrev }}
+          <li class="previous">
+            <a href="{{ .Permalink }}page/{{ .Paginator.Prev.PageNumber }}/">
+              &larr; {{ i18n "newerPosts" }}</a
+            >
+          </li>
+          {{ end }} {{ if .Paginator.HasNext }}
+          <li class="next">
+            <a href="{{ .Permalink }}page/{{ .Paginator.Next.PageNumber }}/">
+              {{ i18n "olderPosts" }} &rarr;</a
+            >
+          </li>
+          {{ end }}
+        </ul>
+        {{ end }}
+      </div>
     </div>
-
-
-
-
   </div>
+  {{/*
+  <h1>put something here</h1>
+  */}} {{ end }}
 </div>
-      {{/* <h1>put something here</h1> */}}
-{{ end }}
